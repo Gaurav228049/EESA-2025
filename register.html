@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Event Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('background.jpg') no-repeat center center/cover;
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+#successMessage {
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Student Event Participation Form</h2>
+        <form id="eventForm">
+            <label for="groupSize">Number of Group Members:</label>
+            <select id="groupSize" name="groupSize" required onchange="generateMemberFields()">
+                <option value="">Select</option>
+                <option value="1">1 Member</option>
+                <option value="2">2 Members</option>
+                <option value="3">3 Members</option>
+                <option value="4">4 Members</option>
+            </select>
+
+            <div id="memberFields"></div> <!-- Student name inputs will be added dynamically -->
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="department">Department:</label>
+            <select id="department" name="department" required>
+                <option value="">Select Department</option>
+                <option value="Electronics & Telecommunication">Electronics & Telecommunication</option>
+                <option value="Computer Engineering">Computer Engineering</option>
+                <option value="Mechanical Engineering">Mechanical Engineering</option>
+                <option value="Civil Engineering">Civil Engineering</option>
+                <option value="Electrical Engineering">Electrical Engineering</option>
+            </select>
+
+            <label for="event">Choose Event:</label>
+            <select id="event" name="event" required>
+                <option value="">Select Event</option>
+                <option value="Technical Quiz">Technical Quiz</option>
+                <option value="Hackathon">Hackathon</option>
+                <option value="Robotics Competition">Robotics Competition</option>
+                <option value="Coding Contest">Coding Contest</option>
+            </select>
+
+            <button type="submit">Register</button>
+            <p id="successMessage"></p>
+        </form>
+    </div>
+    <script>
+        document.getElementById("eventForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    let groupSize = document.getElementById("groupSize").value;
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let department = document.getElementById("department").value;
+    let eventSelected = document.getElementById("event").value;
+
+    if (groupSize === "" || email === "" || phone === "" || department === "" || eventSelected === "") {
+        alert("All fields are required!");
+        return;
+    }
+
+    if (!/^\d{10}$/.test(phone)) {
+        alert("Enter a valid 10-digit phone number.");
+        return;
+    }
+
+    // Validate student names
+    for (let i = 1; i <= groupSize; i++) {
+        let studentName = document.getElementById("student" + i).value.trim();
+        if (studentName === "") {
+            alert(`Please enter name for Student ${i}`);
+            return;
+        }
+    }
+
+    document.getElementById("successMessage").innerText = "Registration Successful! 🎉";
+    document.getElementById("eventForm").reset();
+    document.getElementById("memberFields").innerHTML = ""; // Clear dynamic fields
+});
+
+// Function to generate input fields based on selected group members
+function generateMemberFields() {
+    let groupSize = document.getElementById("groupSize").value;
+    let memberFields = document.getElementById("memberFields");
+    memberFields.innerHTML = ""; // Clear existing fields
+
+    for (let i = 1; i <= groupSize; i++) {
+        // let label = document.createElement("label");
+        // label.innerText = `Student ${i} Name:`;
+        // label.setAttribute("for", "student" + i);
+
+        let input = document.createElement("input");
+        input.type = "text";
+        input.id = "student" + i;
+        input.name = "student" + i;
+        input.placeholder = `Enter Student ${i} Name`;
+        input.required = true;
+
+        // memberFields.appendChild(label);
+        memberFields.appendChild(input);
+    }
+}
+
+    </script>
+</body>
+</html>
