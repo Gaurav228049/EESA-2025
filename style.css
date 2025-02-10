@@ -255,6 +255,7 @@ body {
     gap: 20px;
     margin-bottom: 20px;
 }
+
 .row {
     display: flex;
     justify-content: center;
@@ -264,33 +265,9 @@ body {
 .member {
     text-align: center;
 }
-.row3 img {
+.row img {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.row4 img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.row1 img{
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.row2 img{
-    width: 250px;
-    height: 250px;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -568,11 +545,26 @@ body {
 
 @media (max-width: 480px) {
     .gallery-container {
-        column-count: 3;
+        column-count: 2;
+    }
+    .gallery-container{
+        padding: 15px 0;
     }
 
+    .row img{
+        width: 70px;
+        height: 70px;
+    }
+
+
     .Dept{
-        font-size: 20px;
+        position: absolute;
+        top: 66px;
+        font-size: 12px;
+        width: 172px;
+        text-align: center;
+        left: 112px;
+
     }
 
     .online-btn{
@@ -581,8 +573,8 @@ body {
         padding: 10px 0px;
     }
 
-    nav{
-        top: 150px;
+    .scroll-nav{
+        top: 120px;
     }
 
     .logo img {
@@ -598,8 +590,6 @@ body {
         justify-content: center;
     }
 
-
-
     .nav-buttons{
         width: 100%;
         display: flex;
@@ -612,14 +602,22 @@ body {
         width: 140px;
         padding: 10px 0px;
     }
-
-    .row1 img {
-        width: 160px;
-        height: 160px;
+    .hero-content{
+        flex-direction: column;
+        gap: 2px;
+    }
+    .hero-content h1{
+        font-size: 30px;
     }
     
+
+    
     .row {
-    gap: 0px
+    gap: 5px
+    }
+
+    .row1{
+        gap: 10px;
     }
 
     .member p {
@@ -630,19 +628,6 @@ body {
         font-size: 11px;
     }
 
-    .row2 img {
-        width: 110px;
-        height: 110px;
-    }
-    .row3 img {
-    width: 70px;
-    height: 70px;
-    }
-
-    .row4 img {
-        width: 70px;
-        height: 70px;
-        }
 
     .footer-container {
             flex-wrap: nowrap;
@@ -859,6 +844,7 @@ body {
 .about-content {
     text-align: center;
     padding: 50px 20px;
+    background-color: white;
 }
 
 .about-content h2 {
