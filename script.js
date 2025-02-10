@@ -155,3 +155,28 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// ham
+ham = document.querySelector(".toggle-btn");
+ham.addEventListener("click", function () {
+    var dropdown = document.querySelector(".menu-dropdown");
+    if(dropdown.style.display == "block"){
+        dropdown.style.display = "none";
+        ham.src = "hamburger.png"
+    }
+    else{
+        dropdown.style.display = "block";
+         ham.src = "close.png";
+    }
+    
+});
+
+// Close dropdown when clicking outside
+window.addEventListener("click", function (event) {
+    var dropdown = document.querySelector(".menu-dropdown");
+    var button = document.querySelector(".toggle-btn");
+
+    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+        ham.src = "hamburger.png"
+        dropdown.style.display = "none";
+    }
+});
