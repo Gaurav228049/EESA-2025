@@ -14,26 +14,26 @@
 //     console.log(e.target.innerHTML);
 // })
 // console.log(val, option);
-nav = document.querySelector("nav");
-navLinks = document.querySelector(".nav-links");
-window.addEventListener("scroll", function () {
-    console.log("Scrolling detected!");
+// nav = document.querySelector("nav");
+// navLinks = document.querySelector(".nav-links");
+// window.addEventListener("scroll", function () {
+//     console.log("Scrolling detected!");
     
-    // Example: Change background color when scrolling
-    if (window.scrollY > 75) {
-        nav.style.position = "fixed";
-        nav.style.top = "5px";
-        // navLinks.style.backgroundColor = "yellow";
-        console.log("hii gaurav karale");
+//     // Example: Change background color when scrolling
+//     if (window.scrollY > 75) {
+//         nav.style.position = "fixed";
+//         nav.style.top = "5px";
+//         // navLinks.style.backgroundColor = "yellow";
+//         console.log("hii gaurav karale");
         
-    } else {
-        // nav.style.position = "";
-        nav.style.position = "absolute";
+//     } else {
+//         // nav.style.position = "";
+//         nav.style.position = "absolute";
 
-        nav.style.top = "70px";
-        console.log("hii gaurav karale");
-    }
-});
+//         nav.style.top = "70px";
+//         console.log("hii gaurav karale");
+//     }
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
     const images = document.querySelectorAll(".row img");
