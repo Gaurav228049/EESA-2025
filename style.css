@@ -50,8 +50,6 @@
     scrollbar-width: thin;
 } */
 
-
-
 .name{
     display: flex;
     flex-direction: column;
@@ -272,7 +270,6 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
-
 
 .row :hover img{
     box-shadow: 0 3px 45px rgba(0, 0, 0, 0.2);
@@ -556,7 +553,6 @@ body {
         height: 70px;
     }
 
-
     .Dept{
         position: absolute;
         top: 66px;
@@ -609,9 +605,7 @@ body {
     .hero-content h1{
         font-size: 30px;
     }
-    
-
-    
+      
     .row {
     gap: 5px
     }
@@ -748,8 +742,6 @@ body {
     background: transparent;
     border: 1px solid white;
     color: white;
-
-
 }
 
 /* Contact Dropdown Menu */
@@ -949,9 +941,7 @@ body {
     }
 }
 
-
 /* ham */
-
 .toggle-btn{
     filter: invert(1);
 }
