@@ -12,8 +12,9 @@
     position: fixed;
     top: 70px;
     /* right: -10px; */
-    left: 340px;
+    left: 88%;
     width: 100%;
+    display: none;
 }
 
 /* scrollbar */
@@ -358,6 +359,14 @@ body {
         font-size: 35px;
     }
 
+    .ham{
+        display: block;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
     .nav-links {
         gap: 15px;
     }
@@ -562,6 +571,48 @@ body {
         column-count: 3;
     }
 
+    .Dept{
+        font-size: 20px;
+    }
+
+    .online-btn{
+        font-size: 9px;
+        width: 140px;
+        padding: 10px 0px;
+    }
+
+    nav{
+        top: 100px;
+    }
+
+    .logo img {
+        width: 13%;
+        top: 46px;
+    }
+
+    .name{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+
+    .nav-buttons{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-btn{
+        font-size: 9px;
+        width: 140px;
+        padding: 10px 0px;
+    }
+
     .row1 img {
         width: 160px;
         height: 160px;
@@ -610,15 +661,19 @@ body {
     }
 
     .name h1{
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .name h1{
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .name h4{
         font-size: 8px;
+    }
+
+    .ham .menu-dropdown{
+        left: -96px;
     }
 
 }
@@ -906,4 +961,32 @@ body {
         flex-wrap: nowrap;
         gap: 20px;
     }
+}
+
+
+/* ham */
+
+.toggle-btn{
+    filter: invert(1);
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    min-width: 94px;
+    text-align: left;
+   left: -60px;
+}
+
+.menu-dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.menu-dropdown a:hover {
+    background-color: #ddd;
 }
